@@ -11,6 +11,8 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
+    "outDir": "./types",
+    "declarationDir": "./types",
     "typeRoots": [
       "./node_modules/@wdk"
     ]

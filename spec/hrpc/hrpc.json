@@ -76,58 +76,6 @@
       "version": 1
     },
     {
-      "id": 6,
-      "name": "@wdk-core/getAbstractedAddress",
-      "request": {
-        "name": "@wdk-core/getAbstractedAddress-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/getAbstractedAddress-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
-      "id": 7,
-      "name": "@wdk-core/getAbstractedAddressBalance",
-      "request": {
-        "name": "@wdk-core/getAbstractedAddressBalance-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/getAbstractedAddressBalance-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
-      "id": 8,
-      "name": "@wdk-core/getAbstractedAddressTokenBalance",
-      "request": {
-        "name": "@wdk-core/getAbstractedAddressTokenBalance-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/getAbstractedAddressTokenBalance-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
-      "id": 9,
-      "name": "@wdk-core/abstractedAccountTransfer",
-      "request": {
-        "name": "@wdk-core/abstractedAccountTransfer-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/abstractedAccountTransfer-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
       "id": 10,
       "name": "@wdk-core/getApproveTransaction",
       "request": {
@@ -136,32 +84,6 @@
       },
       "response": {
         "name": "@wdk-core/getApproveTransaction-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
-      "id": 11,
-      "name": "@wdk-core/abstractedSendTransaction",
-      "request": {
-        "name": "@wdk-core/abstractedSendTransaction-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/abstractedSendTransaction-response",
-        "stream": false
-      },
-      "version": 1
-    },
-    {
-      "id": 12,
-      "name": "@wdk-core/abstractedAccountQuoteTransfer",
-      "request": {
-        "name": "@wdk-core/abstractedAccountQuoteTransfer-request",
-        "stream": false
-      },
-      "response": {
-        "name": "@wdk-core/abstractedAccountQuoteTransfer-response",
         "stream": false
       },
       "version": 1

@@ -57,65 +57,6 @@ rpc.onSendTransaction(async payload => {
   }
 })
 
-/*****************
- *
- * ABSTRACTION
- *
- *****************/
-rpc.onGetAbstractedAddress(async payload => {
-  try {
-    return { address: await wdk.getAbstractedAddress(payload.network, payload.accountIndex) }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
-rpc.onGetAbstractedAddressBalance(async payload => {
-  try {
-    const balance = await wdk.getAbstractedAddressBalance(payload.network, payload.accountIndex)
-    return { balance: balance.toString() }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
-rpc.onGetAbstractedAddressTokenBalance(async payload => {
-  try {
-    const balance = await wdk.getAbstractedAddressTokenBalance(payload.network, payload.accountIndex, payload.tokenAddress)
-    return { balance: balance.toString() }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
-rpc.onAbstractedAccountTransfer(async payload => {
-  try {
-    const transfer = await wdk.abstractedAccountTransfer(payload.network, payload.accountIndex, payload.options)
-    return { fee: transfer.fee, hash: transfer.hash }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
-rpc.onAbstractedSendTransaction(async payload => {
-  try {
-    const options = JSON.parse(payload.options)
-    const transfer = await wdk.abstractedSendTransaction(payload.network, payload.accountIndex, options, payload.config)
-    return { fee: transfer.fee, hash: transfer.hash }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
-rpc.onAbstractedAccountQuoteTransfer(async payload => {
-  try {
-    const transfer = await wdk.abstractedAccountQuoteTransfer(payload.network, payload.accountIndex, payload.options)
-    return { fee: transfer.fee }
-  } catch (error) {
-    throw new Error(rpcException.stringifyError(error))
-  }
-})
-
 rpc.onGetTransactionReceipt(async payload => {
   try {
     const receipt = await wdk.getTransactionReceipt(payload.network, payload.accountIndex, payload.hash)

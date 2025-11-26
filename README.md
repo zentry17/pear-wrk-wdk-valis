@@ -120,39 +120,6 @@ console.log(result.hash)
 Supported on EVM (ERC-4337), TON (gasless), TRON (gasfree).
 
 ```javascript
-// Derive an abstracted account and read balances
-const aaAddress = await wdk.getAbstractedAddress('ethereum', 0)
-const aaNativeBalance = await wdk.getAbstractedAddressBalance('ethereum', 0)
-
-// Token balance (e.g., ERC20 on EVM)
-const tokenBalance = await wdk.getAbstractedAddressTokenBalance(
-  'ethereum', 0, '0xdAC17F958D2ee523a2206206994597C13D831ec7'
-)
-
-// Token transfer via AA
-const transfer = await wdk.abstractedAccountTransfer('ethereum', 0, {
-  token: '0xdAC17F...ec7',
-  recipient: '0xRecipient',
-  amount: 1_000_000n // base units
-}, {
-  // Optionally override configured transferMaxFee or paymaster token
-  transferMaxFee: 2_000_000n,
-  paymasterToken: { address: '0xPaymasterToken' }
-})
-
-// Quote AA transfer
-const transferQuote = await wdk.abstractedAccountQuoteTransfer('ethereum', 0, {
-  token: '0xdAC17F...ec7',
-  recipient: '0xRecipient',
-  amount: 1_000_000n
-})
-
-// AA send transaction (array of EVM tx objects)
-const txResult = await wdk.abstractedSendTransaction('ethereum', 0, [{
-  to: '0xContract',
-  value: 0,
-  data: '0x...' // encoded calldata
-}])
 
 // Receipt lookup
 const receipt = await wdk.getTransactionReceipt('ethereum', 0, txResult.hash)
@@ -211,15 +178,6 @@ Methods (async unless noted):
 - `getAddressBalance(blockchain, index): Promise<number>`
 - `quoteSendTransaction(blockchain, index, options): Promise<{ fee: bigint }>`
 - `sendTransaction(blockchain, index, options): Promise<{ hash: string, fee: bigint }>`
-- `getAbstractedAccount(blockchain, index=0): Promise<IWalletAccount>`
-- `getAbstractedAccountByPath(blockchain, path): Promise<IWalletAccount>`
-- `getAbstractedAddress(blockchain, index): Promise<string>`
-- `getAbstractedAddressBalance(blockchain, index): Promise<number>`
-- `getAbstractedAddressTokenBalance(blockchain, index, tokenAddress): Promise<number>`
-- `getAbstractedAddressPaymasterTokenBalance(blockchain, index): Promise<number>`
-- `abstractedAccountTransfer(blockchain, index, transferOptions, transferConfig?): Promise<TransferResult>`
-- `abstractedAccountQuoteTransfer(blockchain, index, transferOptions, transferConfig?): Promise<Omit<TransferResult,'hash'>>`
-- `abstractedSendTransaction(blockchain, index, evmTransactions[], transferConfig?): Promise<TransactionResult>`
 - `getTransactionReceipt(blockchain, index, hash): Promise<unknown | null>`
 - `getApproveTransaction({ token, recipient, amount }): Promise<EvmTransaction>`
 - `dispose(): void`

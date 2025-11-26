@@ -1,18 +1,10 @@
-export default HRPC;
+export = HRPC;
 declare class HRPC {
     constructor(stream: any);
     _stream: any;
     _handlers: any[];
-    _requestEncodings: Map<string, {
-        preencode(state: any, m: any): void;
-        encode(state: any, m: any): void;
-        decode(state: any): any;
-    }>;
-    _responseEncodings: Map<string, {
-        preencode(state: any, m: any): void;
-        encode(state: any, m: any): void;
-        decode(state: any): any;
-    }>;
+    _requestEncodings: Map<string, any>;
+    _responseEncodings: Map<string, any>;
     _rpc: any;
     _call(name: any, args: any): Promise<any>;
     _callSync(name: any, args: any): any;
@@ -22,13 +14,7 @@ declare class HRPC {
     getAddressBalance(args: any): Promise<any>;
     quoteSendTransaction(args: any): Promise<any>;
     sendTransaction(args: any): Promise<any>;
-    getAbstractedAddress(args: any): Promise<any>;
-    getAbstractedAddressBalance(args: any): Promise<any>;
-    getAbstractedAddressTokenBalance(args: any): Promise<any>;
-    abstractedAccountTransfer(args: any): Promise<any>;
     getApproveTransaction(args: any): Promise<any>;
-    abstractedSendTransaction(args: any): Promise<any>;
-    abstractedAccountQuoteTransfer(args: any): Promise<any>;
     getTransactionReceipt(args: any): Promise<any>;
     dispose(args: any): any;
     onLog(responseFn: any): void;
@@ -37,13 +23,7 @@ declare class HRPC {
     onGetAddressBalance(responseFn: any): void;
     onQuoteSendTransaction(responseFn: any): void;
     onSendTransaction(responseFn: any): void;
-    onGetAbstractedAddress(responseFn: any): void;
-    onGetAbstractedAddressBalance(responseFn: any): void;
-    onGetAbstractedAddressTokenBalance(responseFn: any): void;
-    onAbstractedAccountTransfer(responseFn: any): void;
     onGetApproveTransaction(responseFn: any): void;
-    onAbstractedSendTransaction(responseFn: any): void;
-    onAbstractedAccountQuoteTransfer(responseFn: any): void;
     onGetTransactionReceipt(responseFn: any): void;
     onDispose(responseFn: any): void;
     _requestIsStream(command: any): boolean;
