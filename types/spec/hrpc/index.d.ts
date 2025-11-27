@@ -3,8 +3,16 @@ declare class HRPC {
     constructor(stream: any);
     _stream: any;
     _handlers: any[];
-    _requestEncodings: Map<string, any>;
-    _responseEncodings: Map<string, any>;
+    _requestEncodings: Map<string, {
+        preencode(state: any, m: any): void;
+        encode(state: any, m: any): void;
+        decode(state: any): any;
+    }>;
+    _responseEncodings: Map<string, {
+        preencode(state: any, m: any): void;
+        encode(state: any, m: any): void;
+        decode(state: any): any;
+    }>;
     _rpc: any;
     _call(name: any, args: any): Promise<any>;
     _callSync(name: any, args: any): any;

@@ -13,7 +13,11 @@ export function getEnum(name: any): {
     error: number;
     debug: number;
 };
-export function getEncoding(name: any): any;
+export function getEncoding(name: any): {
+    preencode(state: any, m: any): void;
+    encode(state: any, m: any): void;
+    decode(state: any): any;
+};
 export function encode(name: any, value: any, v?: number): any;
 export function decode(name: any, buffer: any, v?: number): any;
 export function setVersion(v: any): void;

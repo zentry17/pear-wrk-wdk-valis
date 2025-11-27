@@ -6,7 +6,7 @@ export type TransferResult = import("@wdk/wallet").TransferResult;
 export type IWalletAccount = import("@wdk/wallet").IWalletAccount;
 export type EvmWalletConfig = import("@wdk/wallet-evm").EvmWalletConfig;
 export type EvmTransaction = import("@wdk/wallet-evm").EvmTransaction;
-export type ValisWalletconfig = any;
+export type ValisWalletconfig = import("@wdk/wallet-valis").ValisWalletConfig;
 export type Seed = string | Uint8Array;
 export type Seeds = {
     /**
