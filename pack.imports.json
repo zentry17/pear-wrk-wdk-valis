@@ -1,3 +1,7 @@
 {
-  "http": "bare-http1"
+  "http": "bare-http1",
+  "externals": [
+    "bufferutil",
+    "utf-8-validate"
+  ]
 }
