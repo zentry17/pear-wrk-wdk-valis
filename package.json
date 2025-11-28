@@ -17,6 +17,7 @@
     "@wdk/wallet-valis": "github:zentry17/wdk-wallet-evm-valis",
     "bare-ipc": "1.1.1",
     "encoding": "npm:bare-encoding@1.0.0",
+    "eventemitter3": "^5.0.1",
     "hrpc": "4.0.1",
     "hyperschema": "1.12.4",
     "os": "npm:bare-os@3.6.1",
