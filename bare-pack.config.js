@@ -1,7 +1,7 @@
 // bare-pack.config.js
 module.exports = {
     external: [
-      'worker',           // ← this is the important one
+      'worker',          
       'crypto',
       'buffer',
       'process',
