@@ -1,6 +1,4 @@
 {
   "http": "bare-http1",
-  "ws": "bare-ws",
-  "sodium-universal": "sodium-javascript",
-  "sodium-native": "sodium-javascript"
+  "ws": "bare-ws"
 }
